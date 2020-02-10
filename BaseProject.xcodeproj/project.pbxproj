@@ -17,6 +17,9 @@
 		77E51B4336D2E2AB14E53FA7 /* Pods_BaseProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C72B98D968C2E5264CC41B6 /* Pods_BaseProject.framework */; };
 		BFC9E84AFF25960F5EDF9FB1 /* libPods-BaseProjectUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C1A6A20967138EEC099ACBE /* libPods-BaseProjectUITests.a */; };
 		CA0DEAF95BDD75AD4ACEA4D6 /* libPods-BaseProjectTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A22E9ADBC8272E23CA3965D /* libPods-BaseProjectTests.a */; };
+		CE56A0C723F13C8000B74C06 /* RegexTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56A0C623F13C8000B74C06 /* RegexTest.swift */; };
+		CE56A0C923F13E6600B74C06 /* RegexTestString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56A0C823F13E6600B74C06 /* RegexTestString.swift */; };
+		CE56A0CC23F13EF200B74C06 /* RegexQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56A0CB23F13EF200B74C06 /* RegexQuery.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +65,9 @@
 		AEA51FE4FB1D9C1D24F32736 /* Pods-BaseProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProjectUITests.release.xcconfig"; path = "Target Support Files/Pods-BaseProjectUITests/Pods-BaseProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BE01BC4F30E666C32045B142 /* Pods-BaseProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProjectUITests.debug.xcconfig"; path = "Target Support Files/Pods-BaseProjectUITests/Pods-BaseProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C4F931A463F3C9DE502370A4 /* Pods-BaseProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject.release.xcconfig"; path = "Target Support Files/Pods-BaseProject/Pods-BaseProject.release.xcconfig"; sourceTree = "<group>"; };
+		CE56A0C623F13C8000B74C06 /* RegexTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexTest.swift; sourceTree = "<group>"; };
+		CE56A0C823F13E6600B74C06 /* RegexTestString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexTestString.swift; sourceTree = "<group>"; };
+		CE56A0CB23F13EF200B74C06 /* RegexQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexQuery.swift; sourceTree = "<group>"; };
 		D994EDA1BA18B67C8BF12E10 /* Pods-BaseProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject.debug.xcconfig"; path = "Target Support Files/Pods-BaseProject/Pods-BaseProject.debug.xcconfig"; sourceTree = "<group>"; };
 		E3CB46576D252A797C2C95FD /* Pods-BaseProject.analyze.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject.analyze.xcconfig"; path = "Target Support Files/Pods-BaseProject/Pods-BaseProject.analyze.xcconfig"; sourceTree = "<group>"; };
 		FDE835994955069640F55552 /* Pods-BaseProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProjectTests.release.xcconfig"; path = "Target Support Files/Pods-BaseProjectTests/Pods-BaseProjectTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +128,7 @@
 			children = (
 				1C1209AF22B0DE99005D0972 /* AppDelegate.swift */,
 				1C1209B122B0DE99005D0972 /* ViewController.swift */,
+				CE56A0CA23F13EE400B74C06 /* Regex */,
 				1C1209B322B0DE99005D0972 /* Main.storyboard */,
 				1C1209B622B0DE99005D0972 /* Assets.xcassets */,
 				1C1209B822B0DE99005D0972 /* LaunchScreen.storyboard */,
@@ -138,6 +145,7 @@
 			children = (
 				1C1209C422B0DE9A005D0972 /* BaseProjectTests.swift */,
 				1C1209C622B0DE9A005D0972 /* Info.plist */,
+				CE56A0C623F13C8000B74C06 /* RegexTest.swift */,
 			);
 			path = BaseProjectTests;
 			sourceTree = "<group>";
@@ -175,6 +183,15 @@
 				AEA51FE4FB1D9C1D24F32736 /* Pods-BaseProjectUITests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		CE56A0CA23F13EE400B74C06 /* Regex */ = {
+			isa = PBXGroup;
+			children = (
+				CE56A0C823F13E6600B74C06 /* RegexTestString.swift */,
+				CE56A0CB23F13EF200B74C06 /* RegexQuery.swift */,
+			);
+			path = Regex;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -418,7 +435,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE56A0CC23F13EF200B74C06 /* RegexQuery.swift in Sources */,
 				1C1209B222B0DE99005D0972 /* ViewController.swift in Sources */,
+				CE56A0C923F13E6600B74C06 /* RegexTestString.swift in Sources */,
 				1C1209B022B0DE99005D0972 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,6 +447,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C1209C522B0DE9A005D0972 /* BaseProjectTests.swift in Sources */,
+				CE56A0C723F13C8000B74C06 /* RegexTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,13 +617,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 32CGS7WPDU;
+				DEVELOPMENT_TEAM = 54A4882579;
 				INFOPLIST_FILE = BaseProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.goodeffect.BaseProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.navercorp.TappedStringDetector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -617,13 +637,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 32CGS7WPDU;
+				DEVELOPMENT_TEAM = 54A4882579;
 				INFOPLIST_FILE = BaseProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.goodeffect.BaseProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.navercorp.TappedStringDetector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -637,7 +657,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 32CGS7WPDU;
+				DEVELOPMENT_TEAM = 54A4882579;
 				INFOPLIST_FILE = BaseProjectTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -659,7 +679,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 32CGS7WPDU;
+				DEVELOPMENT_TEAM = 54A4882579;
 				INFOPLIST_FILE = BaseProjectTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -680,7 +700,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 32CGS7WPDU;
+				DEVELOPMENT_TEAM = 54A4882579;
 				INFOPLIST_FILE = BaseProjectUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -701,7 +721,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 32CGS7WPDU;
+				DEVELOPMENT_TEAM = 54A4882579;
 				INFOPLIST_FILE = BaseProjectUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -784,13 +804,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 32CGS7WPDU;
+				DEVELOPMENT_TEAM = 54A4882579;
 				INFOPLIST_FILE = BaseProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.goodeffect.BaseProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.navercorp.TappedStringDetector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -804,7 +824,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 32CGS7WPDU;
+				DEVELOPMENT_TEAM = 54A4882579;
 				INFOPLIST_FILE = BaseProjectTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -825,7 +845,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 32CGS7WPDU;
+				DEVELOPMENT_TEAM = 54A4882579;
 				INFOPLIST_FILE = BaseProjectUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
