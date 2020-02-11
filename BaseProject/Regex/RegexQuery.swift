@@ -15,7 +15,7 @@ struct RegexQuery {
     //        let pattern = #"[\d]{1,3}(:\d\d)+\d?"#
     //        pattern.text = "[\\d]{1,3}(:\\d\\d)+\\d?"
 
-    static let query = #"[\d]{1,3}(:\d{1,2})+\d{1,3}?"#
+//    static let query = #"[\d]{1,3}(:\d{1,2})+\d{1,3}?"#
 
     // Regex로 모든 케이스를 검사할때 사용할 쿼리
 //    static let advancedQuery = #"(?<!(\d:?))(?:(?:(\d?\d):)?([0-5]?\d):)+([0-5]\d)(?!(\d|:\d\d\d))"#

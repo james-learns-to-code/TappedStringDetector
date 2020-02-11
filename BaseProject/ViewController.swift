@@ -62,6 +62,32 @@ extension UITextView {
     }
 }
 
+extension NSTextStorage {
+    
+    func setAttributeForTimestamp() {
+        print("setAttributeForTimestamp")
+        guard let results = findTimestampString(in: string, using: RegexQuery.advancedQuery) else { return }
+        printIfDebug("findTimestampString " + "\(results)")
+        
+        results
+            .compactMap { $0.range }
+            .filter { $0.location != NSNotFound }
+            .forEach {
+                addAttributes(ViewController.timestamptAttribute, range: $0)
+        }
+//            .compactMap { Range($0, in: string) }
+//            .forEach { print(string[$0]) }
+    }
+    
+    private func findTimestampString(in text: String, using regex: String) -> [NSTextCheckingResult]? {
+        let range = NSRange(text.startIndex..., in: text)
+        if let regex = try? NSRegularExpression(pattern: regex) {
+            return regex.matches(in: text, range: range)
+        }
+        return nil
+    }
+}
+
 // MARK: - Test
 final class ViewController: UIViewController {
 
@@ -75,23 +101,56 @@ final class ViewController: UIViewController {
         self.view.addSubview(pattern, topAnchor: 100, heightAnchor: 100)
         pattern.delegate = self
         pattern.returnKeyType = .done
+        pattern.textColor = .black
         pattern.text = RegexQuery.advancedQuery
         
         let text = DetectorTextView(frame: .zero)
         text.textContainer.lineFragmentPadding = 0
         text.textContainerInset = .zero
+        text.backgroundColor = .white
+        text.textColor = .black
         self.view.addSubview(text, topAnchor: 200, heightAnchor: 500)
         text.font = .systemFont(ofSize: 40)
         text.text = RegexTestString.timestamp
         text.isEditable = false
         text.isSelectable = false
+        text.delegate = self
         text.detectorDelegate = self
         text.detectionCondition = text.getTimestampIfHas
         
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 30)
+        label.textColor = .black
         self.view.addSubview(label, topAnchor: 750, heightAnchor: 60)
     }
+}
+
+extension ViewController: UITextViewDelegate {
+    
+    static let timestamptAttribute: [NSAttributedString.Key: UIColor] = [.foregroundColor: .blue]
+    
+//    func textViewDidChange(_ textView: UITextView) {
+//        print("textViewDidChange")
+//    
+//        let attribute = textView.typingAttributes
+//
+//        textView.textStorage.beginEditing()
+//        // 모든 attribute 하면 안될것 같은데, 색상 관련된 것만 덮어씌우거나 기존 attribute만 편집
+//        // editedRange 사용하면 편집된 부분만 적용할 수 있는듯? 근데 주변부와 합한 경우는?
+//        
+//        print("enumerateAttribute")
+//        textView.textStorage.enumerateAttribute(.foregroundColor, in: .init(location: 0, length: textView.textStorage.string.count), options: [], using: { (attribute, range, needsStop) in
+//            print(attribute)
+//            print(range)
+//            textView.textStorage.removeAttribute(.foregroundColor, range: range)
+//        })
+//        
+//        textView.textStorage.setAttributeForTimestamp()
+//        
+////        textView.textStorage.setAttributes(<#T##attrs: [NSAttributedString.Key : Any]?##[NSAttributedString.Key : Any]?#>, range: <#T##NSRange#>)
+//        textView.textStorage.endEditing()
+//        textView.typingAttributes = attribute
+//    }
 }
 
 extension ViewController: UITextFieldDelegate {
